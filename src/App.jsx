@@ -1,54 +1,26 @@
-import MenuIcon from "@mui/icons-material/Menu";
-
-import {
-  AppBar,
-  Breadcrumbs,
-  IconButton,
-  Link,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { Route, Routes } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import Diamond from "./pages/Diamond";
+import Gold from "./pages/Gold";
+import Home from "./pages/Home";
+import IBS from "./pages/IBS";
+import Master from "./pages/Master";
+import NACL from "./pages/NACL";
+import Plat from "./pages/Plat";
 
 function App() {
   return (
     <>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton sx={{ flexGrow: 1, justifyContent: "flex-start"}}
-            size="large"
-            edge='start'
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon  />
-          </IconButton>
-          
-          <Breadcrumbs
-            sx={{ justifyContent: "flex-end" }}
-            separator="|"
-            aria-label="breadcrumb"
-          >
-            <Link underline="hover" color="white" href="IBS">
-              IBS
-            </Link>
-            <Link underline="hover" color="white" href="Gold">
-              Gold
-            </Link>
-            <Link underline="hover" color="white" href="Plat">
-              Plat
-            </Link>
-            <Link underline="hover" color="white" href="Diamond">
-              Diamond
-            </Link>
-            <Link underline="hover" color="white" href="Master">
-              Master
-            </Link>
-            <Link underline="hover" color="white" href="NACL">
-              NACL
-            </Link>
-          </Breadcrumbs>
-        </Toolbar>
-      </AppBar>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="teams/IBS" element={<IBS/>}/>
+        <Route path="teams/Gold" element={<Gold/>}/>
+        <Route path="teams/Plat" element={<Plat/>}/>
+        <Route path="teams/Diamond" element={<Diamond/>}/>
+        <Route path="teams/Master" element={<Master/>}/>
+        <Route path="teams/NACL" element={<NACL/>}/>
+      </Routes>
     </>
   );
 }
