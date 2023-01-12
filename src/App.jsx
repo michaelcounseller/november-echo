@@ -7,19 +7,21 @@ import IBS from "./pages/IBS";
 import Master from "./pages/Master";
 import NACL from "./pages/NACL";
 import Plat from "./pages/Plat";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="teams/IBS" element={<IBS/>}/>
-        <Route path="teams/Gold" element={<Gold/>}/>
-        <Route path="teams/Plat" element={<Plat/>}/>
-        <Route path="teams/Diamond" element={<Diamond/>}/>
-        <Route path="teams/Master" element={<Master/>}/>
-        <Route path="teams/NACL" element={<NACL/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="teams/IBS" element={<IBS />} />
+        <Route path="teams/Gold" element={<Gold />} />
+        <Route path="teams/Plat" element={<Plat />} />
+        <Route path="teams/Diamond" element={<Diamond />} />
+        <Route path="teams/Master" element={<Master />} />
+        <Route path="teams/NACL" element={<NACL />} />
+        <Route path="player/:playerName" element={<Profile />} />
       </Routes>
     </>
   );
