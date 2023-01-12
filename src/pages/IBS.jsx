@@ -1,21 +1,23 @@
 import { Button, TextField, Typography } from "@mui/material";
 import React from "react";
 import { useState } from "react";
+import { useCounter, useCounterUpdate } from "../components/IDContext";
 
 const IBS = () => {
   let rank, winrate, prevRank;
   const [playerArr, setPlayerArr] = useState([]);
   const [playerName, setPlayerName] = useState("");
-  const [count, setCount] = useState(0);
+  const counter = useCounter()
+  let handleCounter = useCounterUpdate()
+  
 
   const handleClickE = () => {
     setPlayerArr((oldArr) => [...oldArr, playerObj]);
-    setCount((oldCount) => oldCount + 1);
-    console.log(playerArr, count);
+    console.log(playerArr, counter);
   };
 
   let playerObj = {
-    id: count,
+    id: counter,
     name: playerName,
     rank: rank,
     winrate: winrate,
@@ -33,7 +35,7 @@ const IBS = () => {
         autoComplete="current-password"
         onChange={(e) => setPlayerName(e.target.value)}
       />
-      <Button onClick={handleClickE}>Boop</Button>
+      <Button onClick={() => {handleClickE(); handleCounter();}}>Boop</Button>
       <Typography>
         {playerArr.map((player) => (
           <div key={player.id}>
