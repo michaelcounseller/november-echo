@@ -10,15 +10,15 @@ import time
 #Database Vars
 playersdb = mysql.connector.connect(
   host="localhost",
-  user="Witch",
-  password="ManmadeHorror",
-  database="namelesstest3"
+  user="",
+  password="",
+  database="namelessplayers"
 )
 teamsdb = mysql.connector.connect(
   host="localhost",
-  user="Witch",
-  password="ManmadeHorror",
-  database="namelessteams2"
+  user="",
+  password="",
+  database="namelessteams"
 )
 playerscursor = playersdb.cursor()
 teamscursor = teamsdb.cursor()
@@ -32,7 +32,7 @@ options = parser.parse_args(sys.argv[1:])
 
 #Riot API Vars
 region = 'NA1'
-apikey = 'RGAPI-a261adeb-522f-4003-b7cc-b47c036b6c5e'
+apikey = ''
 gameID = options.game
 redID = 200
 blueID = 100
