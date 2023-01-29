@@ -19,5 +19,6 @@ from players import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/player', views.players)
+    path('api/player', views.players, name='players'),
+    path('api/player/<int:id>', views.player, name='player')
 ]
