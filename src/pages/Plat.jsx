@@ -3,13 +3,12 @@ import React from "react";
 import { useState } from "react";
 import { useCounter } from "../App";
 
-
-const Gold = () => {
+const Plat = () => {
   let rank, winrate, prevRank;
   const [playerArr, setPlayerArr] = useState([]);
   const [playerName, setPlayerName] = useState("");
   const [counter, setID] = useCounter()
-  
+
   const handleClickE = () => {
     setPlayerArr((oldArr) => [...oldArr, playerObj]);
     setID(oldCount => oldCount + 1)
@@ -26,7 +25,7 @@ const Gold = () => {
 
   return (
     <>
-      <div>IBS</div>
+      <div>Platinum</div>
 
       <TextField
         id="outlined-name-input"
@@ -51,4 +50,4 @@ const Gold = () => {
   );
 }
 
-export default Gold
+export default Plat

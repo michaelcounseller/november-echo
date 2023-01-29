@@ -1,17 +1,30 @@
 import { Button, TextField, Typography } from "@mui/material";
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useCounter } from "../App";
 
-const Plat = () => {
+const IBS = () => {
   let rank, winrate, prevRank;
   const [playerArr, setPlayerArr] = useState([]);
+  const [player, setPlayer] = useState();
   const [playerName, setPlayerName] = useState("");
-  const [counter, setID] = useCounter()
+  const [counter, setID] = useCounter();
+
+  useEffect(() => {
+    console.log("Fetching...");
+    fetch("http://127.0.0.1:8000/api/player")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setPlayer(data.player);
+      });
+  }, []);
 
   const handleClickE = () => {
     setPlayerArr((oldArr) => [...oldArr, playerObj]);
-    setID(oldCount => oldCount + 1)
+    setID((oldCount) => oldCount + 1);
     console.log(playerArr, counter);
   };
 
@@ -36,6 +49,17 @@ const Plat = () => {
       />
       <Button onClick={handleClickE}>Boop</Button>
       <Typography>
+        
+          Current players:
+          {player
+            ? player.map((player) => {
+                return (
+                  <>
+                    <p><Link to={`/player/${player.name}`}>{player.name}</Link></p>
+                  </>
+                );
+              })
+            : null}
         {playerArr.map((player) => (
           <div key={player.id}>
             <li>
@@ -48,6 +72,6 @@ const Plat = () => {
       </Typography>
     </>
   );
-}
+};
 
-export default Plat
+export default IBS;

@@ -3,8 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useCounter } from "../App";
 
-
-const IBS = () => {
+const Diamond = () => {
   let rank, winrate, prevRank;
   const [playerArr, setPlayerArr] = useState([]);
   const [playerName, setPlayerName] = useState("");
@@ -26,7 +25,7 @@ const IBS = () => {
 
   return (
     <>
-      <div>IBS</div>
+      <div>Diamond</div>
 
       <TextField
         id="outlined-name-input"
@@ -49,6 +48,6 @@ const IBS = () => {
       </Typography>
     </>
   );
-};
+}
 
-export default IBS;
+export default Diamond

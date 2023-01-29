@@ -25,7 +25,7 @@ const Master = () => {
 
   return (
     <>
-      <div>IBS</div>
+      <div>Master</div>
 
       <TextField
         id="outlined-name-input"

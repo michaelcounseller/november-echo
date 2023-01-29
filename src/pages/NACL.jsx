@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useCounter } from "../App";
 
-const Diamond = () => {
+const NACL = () => {
   let rank, winrate, prevRank;
   const [playerArr, setPlayerArr] = useState([]);
   const [playerName, setPlayerName] = useState("");
@@ -25,7 +25,7 @@ const Diamond = () => {
 
   return (
     <>
-      <div>IBS</div>
+      <div>NACL</div>
 
       <TextField
         id="outlined-name-input"
@@ -50,4 +50,4 @@ const Diamond = () => {
   );
 }
 
-export default Diamond
+export default NACL

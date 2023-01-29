@@ -3,12 +3,13 @@ import React from "react";
 import { useState } from "react";
 import { useCounter } from "../App";
 
-const NACL = () => {
+
+const Gold = () => {
   let rank, winrate, prevRank;
   const [playerArr, setPlayerArr] = useState([]);
   const [playerName, setPlayerName] = useState("");
   const [counter, setID] = useCounter()
-
+  
   const handleClickE = () => {
     setPlayerArr((oldArr) => [...oldArr, playerObj]);
     setID(oldCount => oldCount + 1)
@@ -25,7 +26,7 @@ const NACL = () => {
 
   return (
     <>
-      <div>IBS</div>
+      <div>Gold</div>
 
       <TextField
         id="outlined-name-input"
@@ -50,4 +51,4 @@ const NACL = () => {
   );
 }
 
-export default NACL
+export default Gold
